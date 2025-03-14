@@ -15,13 +15,13 @@ This lab has been designed for you to learn live system forensic and memory anal
 
 This session is broken-down into following labs:
 
-* [Lab 0 - Setup Docker](#centerblab-0---setup-dockerbcenter)
-* [Lab 1 - Live Forensics](#centerblab-1---live-forensicsbcenter)
-* [Lab 2 - Introduction to Volatility](#centerblab-2---introduction-to-volatilitybcenter)
-* [Lab 3 - Introduction to Volatility part 2](#centerblab-3---introduction-to-volatility-part-2bcenter)
-* [Lab 4 - Windows Memory Dump](#centerblab-4---windows-memory-dumpbcenter)
+* [Lab 0 - Setup Docker](#lab-0---setup-docker)
+* [Lab 1 - Live Forensics](#lab-1---live-forensics)
+* [Lab 2 - Introduction to Volatility](#lab-2---introduction-to-volatility)
+* [Lab 3 - Introduction to Volatility part 2](#lab-3---introduction-to-volatility-part-2)
+* [Lab 4 - Windows Memory Dump](#lab-4---windows-memory-dump)
 
-<center><b>Lab 0 - Setup Docker</b></center>
+## Lab 0 - Setup Docker
 
 This section, is a step-by-step guide on installing Docker, a powerful platform for building, deploying, and managing containerised applications. Once Docker is set up, we'll proceed to configure the blacktop/volatility Docker image, an essential tool for forensic analysis which integrates Volatility for memory forensics and YARA for malware detection. 
 
@@ -168,7 +168,7 @@ Remember, while these steps can significantly reduce the risk, no method guarant
 
 
 
-<center><b>Lab 1 - Live Forensics</b></center>
+## Lab 1 - Live Forensics
 
 This lab provides a practical guide to conducting live forensics on a compromised Linux system, emphasising the importance of investigating suspicious processes in real-time to gather evidence and identify potential security threats. 
 
@@ -409,7 +409,7 @@ Login to the Lubuntu desktop and use the terminal for the following exercise.
 	</details>
     For more information refer to the cheatsheet: [https://www.sandflysecurity.com/blog/compromised-linux-cheat-sheet/](https://www.sandflysecurity.com/blog/compromised-linux-cheat-sheet/)
 
-<center><b>Lab 2 - Introduction to Volatility</b></center>
+## Lab 2 - Introduction to Volatility
 
 For this lab, we will be analysing a linux memory dump from a binary that was obtained from the honeypot. 
 
@@ -507,7 +507,7 @@ Please click the Next button to continue.
 
 
 
-<center><b>Lab 3 - Introduction to Volatility part 2</b></center>
+## Lab 3 - Introduction to Volatility part 2
 
 In this lab, you will be exploring Volatility and see how to use some features for further analysis. 
 
@@ -687,7 +687,7 @@ Please click the Next button to continue.
 
 
 
-<center><b>Lab 4 - Windows Memory Dump</b></center>
+## Lab 4 - Windows Memory Dump
 
 For this lab, use volatility to analyse the memory dump obtained from a Stuxnet infected Microsoft Windows computer. 
 
