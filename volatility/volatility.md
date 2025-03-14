@@ -343,17 +343,51 @@ Login to the Lubuntu desktop and use the terminal for the following exercise.
 
 - [] Discussion / Let's Recap 
 	
-    @lab.Activity(Question1)
-	
-    @lab.Activity(Question2)
+	What is the value of Live Forensics?
+	- [ ] Gathering volatile information that would be lost if the computer is turned off or rebooted.
+	- [ ] Identifying and analyzing malicious processes and activities as they happen.
+	- [ ] Collecting evidence that can be used for incident response and further investigation.
+	- [ ] All of the above.
 
-    @lab.Activity(Question3)
+	<details>
+	  <summary>Click to reveal answer</summary>
+	
+	  **Correct Answer:** All of the above. ✅
+	
+	  **Feedback:**  
+	  Live Forensics allows investigators to analyze a compromised system in real-time while it is still running. This provides several benefits, including:
+	  
+	  - Gathering volatile information that would be lost if the computer is turned off or rebooted.
+	  - Identifying and analyzing malicious processes and activities as they happen.
+	  - Collecting evidence that can be used for incident response and further investigation.
+	
+	</details>
+	
+    	What is the recommended action when dealing with a suspicious process during live forensics?
+	- [ ] Immediately terminating the suspicious process.
+	- [ ] Rebooting the compromised system.
+	- [ ] Ignoring the suspicious process.
+	- [ ] Investigating the process and gathering information. 
+
+	<details>
+	  <summary>Click to reveal answer</summary>
+	
+	  **Correct Answer:** Investigating the process and gathering information. ✅
+	
+	  **Feedback:**  
+	  During live forensics, it's advisable **not** to kill a suspicious process immediately without first investigating its activities.  
+	  Terminating a process prematurely may result in the loss of **valuable information and evidence**.  
+	  It's essential to understand what the process is doing and gather as much information as possible before taking any action.
+	
+	</details>
+
+    	What have you learned from the lab?
+	- [ ] Simulating an attack using metasploit.
+	- [ ] Recovering deleted binary files of suspicious processes.
+	- [ ] Identifying and monitoring suspicious processes.
+	- [ ] Validating the integrity of recovered binaries.
 
     For more information refer to the cheatsheet: [https://www.sandflysecurity.com/blog/compromised-linux-cheat-sheet/](https://www.sandflysecurity.com/blog/compromised-linux-cheat-sheet/)
-
-Please click the Next button to continue.
-
-
 
 <center><b>Lab 2 - Introduction to Volatility</b></center>
 
