@@ -1,17 +1,17 @@
 
 ![](images/apnic_logo.png)<
 
-#<center><b>Memory Analysis</b></center>
+<center><b>Memory Analysis</b></center>
 
-##**About this Hands-On Session**
+**About this Hands-On Session**
 This lab has been designed for you to learn live system forensic and memory analysis. The lab exercises are part of a workshop. 
 
 <b>Prerequisites:</b> Knowledge of Ubuntu, linux commands, Intrusion Detection Systems, packet capture, security and ransomware concepts. 
 
  
-###**Lab Contents - Memory Analysis (on Lubuntu desktop)** 
+**Lab Contents - Memory Analysis (on Lubuntu desktop)** 
 
-####**Duration:** This Lab can be completed within 3 hours.
+**Duration:** This Lab can be completed within 3 hours.
 
 This session is broken-down into following labs:
 
@@ -29,7 +29,7 @@ This lab will highlight the convenience and efficiency of using Docker container
 
 >[!Warning] As this system is not connected to the internet, all the below steps have been completed for you.
 
-###**Install docker**
+**Install docker**
 
 Login to the Lubuntu desktop and use the terminal for the following exercise. 
 
@@ -79,7 +79,7 @@ Login to the Lubuntu desktop and use the terminal for the following exercise.
 
 	>[!Knowledge] For more detail refer to [https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/)
 
-###**Download a volatility and yara docker image**	
+**Download a volatility and yara docker image**	
 
 - [X] Download the docker image from [https://hub.docker.com/r/blacktop/volatility](https://hub.docker.com/r/blacktop/volatility)
 
@@ -184,7 +184,7 @@ The steps to complete this section are:
 * Examining file descriptors, process maps, and stack information.
 * Reviewing overall process details using /proc/$PID/status.
 
-###**Basic Linux Malware Forensics**
+**Basic Linux Malware Forensics**
 
 We'll perform a step-by-step analysis of a _bind shell backdoor_ waiting for a connection on an Ubuntu Server. In this section, you'll understand the significance of running processes for investigation. These information are volatile as well, such that they will be gone if the computer is turned off. In other words, you will not get some of these information from the physical disk imaging. 
 
@@ -373,7 +373,7 @@ The steps to complete this section are:
 * Retrieve Command History
 * List and Extract Open Files
 
-####**Analysis with Volatility**
+**Analysis with Volatility**
 
 Volatility is an open-source memory forensics framework used by cybersecurity professionals to analyse and extract valuable information from computer memory dumps. It allows investigators to examine running processes, network connections, and other system data to uncover evidence of malicious activity or security breaches.
 
