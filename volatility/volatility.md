@@ -21,7 +21,7 @@ This session is broken-down into following labs:
 * [Lab 3 - Introduction to Volatility part 2](#centerblab-3---introduction-to-volatility-part-2bcenter)
 * [Lab 4 - Windows Memory Dump](#centerblab-4---windows-memory-dumpbcenter)
 
-#<center><b>Lab 0 - Setup Docker</b></center>
+<center><b>Lab 0 - Setup Docker</b></center>
 
 This section, is a step-by-step guide on installing Docker, a powerful platform for building, deploying, and managing containerised applications. Once Docker is set up, we'll proceed to configure the blacktop/volatility Docker image, an essential tool for forensic analysis which integrates Volatility for memory forensics and YARA for malware detection. 
 
@@ -168,7 +168,7 @@ Remember, while these steps can significantly reduce the risk, no method guarant
 
 
 
-#<center><b>Lab 1 - Live Forensics</b></center>
+<center><b>Lab 1 - Live Forensics</b></center>
 
 This lab provides a practical guide to conducting live forensics on a compromised Linux system, emphasising the importance of investigating suspicious processes in real-time to gather evidence and identify potential security threats. 
 
@@ -355,7 +355,7 @@ Please click the Next button to continue.
 
 
 
-#<center><b>Lab 2 - Introduction to Volatility</b></center>
+<center><b>Lab 2 - Introduction to Volatility</b></center>
 
 For this lab, we will be analysing a linux memory dump from a binary that was obtained from the honeypot. 
 
@@ -453,7 +453,7 @@ Please click the Next button to continue.
 
 
 
-#<center><b>Lab 3 - Introduction to Volatility part 2</b></center>
+<center><b>Lab 3 - Introduction to Volatility part 2</b></center>
 
 In this lab, you will be exploring Volatility and see how to use some features for further analysis. 
 
@@ -633,7 +633,7 @@ Please click the Next button to continue.
 
 
 
-#<center><b>Lab 4 - Windows Memory Dump</b></center>
+<center><b>Lab 4 - Windows Memory Dump</b></center>
 
 For this lab, use volatility to analyse the memory dump obtained from a Stuxnet infected Microsoft Windows computer. 
 
