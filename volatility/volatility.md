@@ -1,7 +1,7 @@
 
-![](images/apnic_logo.png)<
+![](images/apnic_logo.png)
 
-<center><b>Memory Analysis</b></center>
+#Memory Analysis
 
 **About this Hands-On Session**
 This lab has been designed for you to learn live system forensic and memory analysis. The lab exercises are part of a workshop. 
@@ -9,7 +9,7 @@ This lab has been designed for you to learn live system forensic and memory anal
 <b>Prerequisites:</b> Knowledge of Ubuntu, linux commands, Intrusion Detection Systems, packet capture, security and ransomware concepts. 
 
  
-**Lab Contents - Memory Analysis (on Lubuntu desktop)** 
+##Lab Contents - Memory Analysis (on Lubuntu desktop)##
 
 **Duration:** This Lab can be completed within 3 hours.
 
