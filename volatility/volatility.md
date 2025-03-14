@@ -352,9 +352,9 @@ Login to the Lubuntu desktop and use the terminal for the following exercise.
 	<details>
 	  <summary>Click to reveal answer</summary>
 	
-	  **Correct Answer:** All of the above. ✅
+	  Correct Answer: All of the above. ✅
 	
-	  **Feedback:**  
+	  Feedback: <br> 
 	  Live Forensics allows investigators to analyze a compromised system in real-time while it is still running. This provides several benefits, including:
 	  
 	  - Gathering volatile information that would be lost if the computer is turned off or rebooted.
@@ -372,11 +372,11 @@ Login to the Lubuntu desktop and use the terminal for the following exercise.
 	<details>
 	  <summary>Click to reveal answer</summary>
 	
-	  **Correct Answer:** Investigating the process and gathering information. ✅
+	  Correct Answer: Investigating the process and gathering information. ✅
 	
-	  **Feedback:**  
-	  During live forensics, it's advisable **not** to kill a suspicious process immediately without first investigating its activities.  
-	  Terminating a process prematurely may result in the loss of **valuable information and evidence**.  
+	  Feedback:<br>
+	  During live forensics, it's advisable <b>not</b> to kill a suspicious process immediately without first investigating its activities.  
+	  Terminating a process prematurely may result in the loss of <b>valuable information and evidence</b>.  
 	  It's essential to understand what the process is doing and gather as much information as possible before taking any action.
 	
 	</details>
@@ -387,6 +387,26 @@ Login to the Lubuntu desktop and use the terminal for the following exercise.
 	- [ ] Identifying and monitoring suspicious processes.
 	- [ ] Validating the integrity of recovered binaries.
 
+	<details>
+	  <summary>Click to reveal answer</summary>
+	  Correct Answer: <br>
+		Recovering deleted binary files of suspicious processes. ✅<br>
+		Identifying and monitoring suspicious processes. ✅ <br>
+		Validating the integrity of recovered binaries. ✅
+		
+   	  Feedback: <br>
+      	  From the lab, we have learned various techniques for conducting live forensics on a compromised Linux system, including:
+	  * Simulating an attack using Netcat to open a bind shell backdoor.
+    	  * Identifying and monitoring suspicious processes.
+    	  * Exploring information related to running processes in the /proc directory.
+    	  * Recovering deleted binary files of suspicious processes.
+    	  * Validating the integrity of recovered binaries.
+    	  * Investigating process names, parameters, and environments.
+    	  * Examining file descriptors, process maps, and stack information.
+    	  * Reviewing overall process details using /proc/$PID/status.
+
+		
+	</details>
     For more information refer to the cheatsheet: [https://www.sandflysecurity.com/blog/compromised-linux-cheat-sheet/](https://www.sandflysecurity.com/blog/compromised-linux-cheat-sheet/)
 
 <center><b>Lab 2 - Introduction to Volatility</b></center>
