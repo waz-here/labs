@@ -172,7 +172,7 @@ Remember, while these steps can significantly reduce the risk, no method guarant
 
 This lab provides a practical guide to conducting live forensics on a compromised Linux system, emphasising the importance of investigating suspicious processes in real-time to gather evidence and identify potential security threats. 
 
-For more information refer to the cheatsheet: [https://www.sandflysecurity.com/blog/compromised-linux-cheat-sheet/](https://www.sandflysecurity.com/blog/compromised-linux-cheat-sheet/)
+For more information refer to the blog & cheatsheet: [https://sandflysecurity.com/blog/basic-linux-malware-process-forensics-for-incident-responders/](https://sandflysecurity.com/blog/basic-linux-malware-process-forensics-for-incident-responders/) & [https://www.sandflysecurity.com/blog/compromised-linux-cheat-sheet/](https://www.sandflysecurity.com/blog/compromised-linux-cheat-sheet/)
 
 The steps to complete this section are:
 * Simulating an attack using Netcat to open a bind shell backdoor.
