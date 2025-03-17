@@ -21,6 +21,8 @@ This session is broken-down into following labs:
 * [Lab 3 - Introduction to Volatility part 2](#lab-3---introduction-to-volatility-part-2)
 * [Lab 4 - Windows Memory Dump](#lab-4---windows-memory-dump)
 
+  Access the APNIC Academy Memory Virtual Lab [https://academy.apnic.net/virtual-labs?labId=151590](https://academy.apnic.net/virtual-labs?labId=151590)
+
 ## Lab 0 - Setup Docker
 
 This section, is a step-by-step guide on installing Docker, a powerful platform for building, deploying, and managing containerised applications. Once Docker is set up, we'll proceed to configure the blacktop/volatility Docker image, an essential tool for forensic analysis which integrates Volatility for memory forensics and YARA for malware detection. 
