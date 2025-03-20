@@ -21,8 +21,8 @@ This session is broken-down into following labs:
 * [Lab 3 - Introduction to Volatility part 2](#lab-3---introduction-to-volatility-part-2)
 * [Lab 4 - Windows Memory Dump](#lab-4---windows-memory-dump)
 
-  Access the APNIC Academy Memory Virtual Lab [https://academy.apnic.net/virtual-labs?labId=151590](https://academy.apnic.net/virtual-labs?labId=151590)
-  of download the SANS Slingshot Linux Distribution [https://www.sans.org/tools/slingshot/](https://www.sans.org/tools/slingshot/) which have Volatility 2 and 3 setup.
+  Access the APNIC Academy Memory Virtual Lab [https://academy.apnic.net/virtual-labs?labId=151590](https://academy.apnic.net/virtual-labs?labId=151590) <br>
+  or download the SANS Slingshot Linux Distribution [https://www.sans.org/tools/slingshot/](https://www.sans.org/tools/slingshot/) which have Volatility 2 and 3 setup.
 
 ## Lab 0 - Setup Docker
 
