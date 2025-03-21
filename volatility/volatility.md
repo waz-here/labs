@@ -846,8 +846,7 @@ The steps to complete this lab are:
 
 ## Sample Files
 
-- [Sample `hiberfil.sys`](https://digitalcorpora.org/corpora/memory-images)
-- [Sample `pagefile.sys`](https://github.com/volatilityfoundation/volatility/wiki/Memory-Samples)
+- [https://github.com/volatilityfoundation/volatility/wiki/Memory-Samples](https://github.com/volatilityfoundation/volatility/wiki/Memory-Samples)
     
 
 For more detail refer to:
