@@ -222,10 +222,12 @@ Login to the Lubuntu desktop and use the terminal for the following exercise.
 
     ![](images/image00%20ps%20aux.png)
 
-    What is the process ID? 
-    
-    @lab.TextBox(processId) 
-
+    What is the process ID?
+  
+	```    
+	PROCESS_ID=$(lsof -i | tail -1 | awk -F' ' '{print $2}' | xargs)
+	```
+ 
 - [] Check for the network activities 
 
     ```
@@ -239,16 +241,14 @@ Login to the Lubuntu desktop and use the terminal for the following exercise.
 - [] When doing live forensics on Linux, /proc is your best friend! A lot of information related to running processes are kept in /proc/$PID
 	
     ```
-    ls -al /proc/@lab.Variable(processId)
-	```
+    ls -al /proc/$PROCESS_ID
+    ```
 
     ![image02 procID.png](images/image02%20procID.png)
 
-	
-
-	```
-    ls -al /proc/@lab.Variable(processId) | grep -E "tmp|x7"
-	```
+    ```
+     ls -al /proc/$PROCESS_ID | grep -E "tmp|x7"
+    ```
 
     This will show a few interesting things: 
     - The current working directory (cwd) is /tmp 
@@ -259,7 +259,7 @@ Login to the Lubuntu desktop and use the terminal for the following exercise.
 - [] Now we will try to recover the deleted binary. As long process is still running, it is very easy to recover a deleted process binary on Linux:
 	
     ```
-    cp /proc/@lab.Variable(processId)/exe /tmp/recovered_bin 
+    cp /proc/$PROCESS_ID/exe /tmp/recovered_bin 
     ```
 
 	**Note**: Basically /proc/@lab.Variable(processId)/exe is a copy of the running executable. This makes it worthwhile to recover the binary and save it somewhere before you kill the process or shutdown the machine. Of course, we need to be careful 
@@ -280,12 +280,12 @@ Login to the Lubuntu desktop and use the terminal for the following exercise.
 
 - [] We will now explore the commands (name & full parameters) of the process. Some malware will give itself a vague or closely to legit process names (i.e. apache or sshd), so we can check both /proc/$PID/comm and /proc/$PID/cmdline 
 
-	```
-    cat /proc/@lab.Variable(processId)/comm
+    ```
+    cat /proc/$PROCESS_ID/comm
     ```
 
-	```
-    cat /proc/@lab.Variable(processId)/cmdline && echo "\n"
+    ```
+    cat /proc/$PROCESS_ID/cmdline && echo "\n"
     ```
 	
     Both results are x7 but we can see the parameters that was used when issuing the command 
@@ -295,8 +295,8 @@ Login to the Lubuntu desktop and use the terminal for the following exercise.
 
 - [] Malware process environment. Now let’s take a look at the environment our malware inherited when it started. This can often reveal information about who or what started the process. Here we see the process was started with sudo by another user:
 
-	```
-    strings /proc/@lab.Variable(processId)/environ 
+    ```
+    strings /proc/$PROCESS_ID/environ 
     ```
 
 	Have a look at the output as it provides information on users, location, directory path, etc 
@@ -305,8 +305,8 @@ Login to the Lubuntu desktop and use the terminal for the following exercise.
 
 - [] We can also see the file descriptors that the malware has open. This can often show you hidden files and directories that the malware is using to stash things along with open sockets:
 
-	```
-    ls -al /proc/@lab.Variable(processId)/fd
+    ```
+    ls -al /proc/$PROCESS_ID/fd
     ```
 
 	- This shows that the open file descriptors that process has 
@@ -317,7 +317,7 @@ Login to the Lubuntu desktop and use the terminal for the following exercise.
 - [] Another area to look into is the Linux process maps. This shows libraries the malware is using and again can show links to malicious files it is using as well.
 	
 	```
-    cat /proc/@lab.Variable(processId)/maps 
+    cat /proc/$PROCESS_ID/maps  
     ```
 
 	The /proc/$PID/maps file will show libraries and other data the binary has open. It can help reveal hidden areas where the process is stashing data or libraries that are malicious. 
@@ -327,7 +327,7 @@ Login to the Lubuntu desktop and use the terminal for the following exercise.
 - [] The /proc/$PID/stack area can sometimes reveal more details. We’ll look at that like this:
 
 	```
-    sudo cat /proc/@lab.Variable(processId)/stack
+    sudo cat /proc/$PROCESS_ID/stack
     ```
 
 	This file provides additional insights on what the malware/process might be doing. These accept() calls indicate that it is waiting for an inbound network connection. If a process is hiding the network port from netstat, you can still see what it is doing here. 
@@ -337,7 +337,7 @@ Login to the Lubuntu desktop and use the terminal for the following exercise.
 - [] Finally, let’s look at /proc/$PID/status for overall process details. This can reveal parent PIDs and so forth.
 
 	```
-    cat /proc/@lab.Variable(processId)/status 
+    cat /proc/$PROCESS_ID/status 
     ```
 
 	This file gives information on parent PIDs (if any), memory usage, etc
@@ -464,9 +464,7 @@ With the memory acquired, we will explore Volatility
 	
 	```
 	volatility --plugins=. -f memUbuntu.raw --profile=LinuxUbuntu_4_4_0-21x64 linux_pslist 
-	```
-
-	@lab.Activity(Question4) 
+	``` 
 	
 	Try using **linux_pstree** to get a better understanding of the parent-child relationships between various processes.
 
@@ -481,8 +479,6 @@ With the memory acquired, we will explore Volatility
 	```
 	volatility --plugins=. -f memUbuntu.raw --profile=LinuxUbuntu_4_4_0-21x64 linux_ifconfig
 	```
-
-	@lab.Activity(Question5)
 
 - [] Retrieving history of executed commands is always a valuable forensic artefact. It can give us an insight into what the adversary might’ve executed on the system. When analysing windows memory dumps, we use the plugin **cmdscan** for retrieving command history. In the case of Linux memory dumps, use **linux_bash** command
 	
@@ -501,14 +497,6 @@ With the memory acquired, we will explore Volatility
 	This plugin gives the inode address (which is the base address of the file), the inode number and the full path to file.
 
 	>[!Hint] The **linux_find_file** plugin is used to extract the files based on their inode address and dump them to disk.
-
-	@lab.Activity(Question6)
-
-	@lab.Activity(Question7)	
-
-Please click the Next button to continue.
-
-
 
 ## Lab 3 - Introduction to Volatility part 2
 
@@ -536,16 +524,13 @@ Let's explore the above	questions with our Memory dump called **memUbuntu.raw**.
 
 	>[!Hint] Try adding **| less** or **| grep -E "Pid|krn"** to the end of the command
 
-	@lab.Activity(Question8)
 
 - [] Some plugins allow passing of paramaters (i.e. pid or file path). Let's find where _krn_ is executed from, by using the Linux Plugin called **linux_proc_maps** and **1351** will be used as the PID for the krn process in the memory dump. 
 	
 
 	```
 	volatility --plugins=. -f memUbuntu.raw --profile=LinuxUbuntu_4_4_0-21x64 linux_proc_maps -p 1351
-	```
-
-	@lab.Activity(Question9)	
+	```	
 
 - [] Now we would like extract the file in memory, to do that we will need Inode information using the **linux_find_file** command to find the Inode number & inode (in memory) for a file 
 
@@ -626,10 +611,6 @@ Let's explore the above	questions with our Memory dump called **memUbuntu.raw**.
 	volatility  --plugins=. -f memUbuntu.raw --profile=LinuxUbuntu_4_4_0-21x64 linux_netstat -p 1351
 	```
 
-	@lab.Activity(Question10)
-
-	@lab.Activity(Question11)
-
 	>[!Hint] Use virustotal and check if the IP address is malicious. [https://www.virustotal.com/](https://www.virustotal.com/gui/ip-address/131.153.76.130)
 
 - [] Yara is an open source tool for malware researchers. It uses pattern matching to identify and classify malware. Volatility has Yara integration and we can use it to scan the memory dump for signs of malware. 
@@ -655,9 +636,6 @@ Let's explore the above	questions with our Memory dump called **memUbuntu.raw**.
 	```
 	
 	>[!Note] This may take a while.
-
-	@lab.Activity(Question12)
-
 
 - [] Discussion 
 	- What do you like about Volatility? 
@@ -685,9 +663,6 @@ Let's explore the above	questions with our Memory dump called **memUbuntu.raw**.
 	
 	CheatSheets 
 	* [https://downloads.volatilityfoundation.org/releases/2.4/CheatSheet_v2.4.pdf](https://downloads.volatilityfoundation.org/releases/2.4/CheatSheet_v2.4.pdf)
-
-Please click the Next button to continue.
-
 
 
 ## Lab 4 - Windows Memory Dump
@@ -735,8 +710,6 @@ In the context of Stuxnet detection, lsass can be examined for anomalies or sign
 	volatility -f stuxnet.vmem --profile=WinXPSP2x86 pslist | grep -E "Name|680"
 	```
 
-	@lab.Activity(Question13)
-
 - [] Scan the memory with Yara 
 
 	```
@@ -748,9 +721,7 @@ In the context of Stuxnet detection, lsass can be examined for anomalies or sign
 	```
 	volatility -f stuxnet.vmem --profile=WinXPSP2x86 yarascan -y malware_rules.yar | grep Rule -A 1
 	```
-
-	@lab.Activity(Question14)
-
+ 
 - [] Use the **malfind** plugin to identify hidden and injected code in those processes (pid 680, 868, and 1928).
 
 	```
@@ -768,8 +739,6 @@ In the context of Stuxnet detection, lsass can be examined for anomalies or sign
 	```
 	volatility -f stuxnet.vmem --profile=WinXPSP2x86 malfind -p 1928,868,680 | grep -i write -B 1 -A 1
 	```
-
-	@lab.Activity(Question15)
 
 - [] Bonus, can you dump the process to a file. Then calculate the hash of the file and check the hash on Virustotal? 
 
@@ -825,7 +794,61 @@ In the context of Stuxnet detection, lsass can be examined for anomalies or sign
 	file stux_dump/*
 	```		
 
+# Lab 5 - Analysing `hiberfil.sys` and `pagefile.sys` with Volatility [DRAFT]
 
+In this lab, you will analyse two commonly overlooked memory artefacts: the Windows hibernation file (`hiberfil.sys`) and the paging file (`pagefile.sys`). These files may contain traces of malware, credentials, command history, and network connections even after a system reboots.
+
+The steps to complete this lab are:
+* Convert and analyse `hiberfil.sys`
+* Scan `pagefile.sys` using external tools
+* Detect hidden malware with YARA rules
+* Extract and investigate relevant artefacts
+
+- Convert `hiberfil.sys` to a Raw Memory Image
+
+    ```
+    cd ~/memoryanalysis
+    volatility -f hiberfil.sys imagecopy -O mem_hiber.raw
+    ```
+
+- Identify the Memory Profile
+
+    ```
+    volatility -f mem_hiber.raw imageinfo
+    ```
+
+- Analyse the Hibernation Memory File
+
+    ```
+    volatility -f mem_hiber.raw --profile=Win7SP1x64 pslist
+    volatility -f mem_hiber.raw --profile=Win7SP1x64 pstree
+    volatility -f mem_hiber.raw --profile=Win7SP1x64 netscan
+    ```
+
+- Scan for Malware Using YARA Rules
+
+    ```bash
+    volatility -f mem_hiber.raw --profile=Win7SP1x64 yarascan -y malware_rules.yar
+    ```
+
+- [OPTIONAL] Analyse `pagefile.sys` (Paging File)
+
+    ```bash
+    yarascan -r malware_rules.yar pagefile.sys
+    bulk_extractor -o pagefile_output/ pagefile.sys
+    ```
+
+- [OPTIONAL] Analyse Memory Dump with Embedded Pagefile
+
+    ```bash
+    volatility -f full_mem_with_pagefile.raw --profile=Win10x64_18362 pslist
+    ```
+
+## Sample Files
+
+- [Sample `hiberfil.sys`](https://digitalcorpora.org/corpora/memory-images)
+- [Sample `pagefile.sys`](https://github.com/volatilityfoundation/volatility/wiki/Memory-Samples)
+    
 
 For more detail refer to:
 
