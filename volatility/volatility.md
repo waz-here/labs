@@ -6,7 +6,9 @@
 **About this Hands-On Session**
 This lab has been designed for you to learn live system forensic and memory analysis. The lab exercises are part of a workshop. 
 
-This project is based on work originally developed by APNIC and shared under the Creative Commons Attribution-NonCommercial 4.0 International License. We gratefully acknowledge APNIC for their contributions. For more information, visit https://creativecommons.org/licenses/by-nc/4.0/. [https://github.com/githubapnic/labs/tree/main/volatility](https://github.com/githubapnic/labs/tree/main/volatility)
+This project is based on work originally developed by APNIC and shared under the Creative Commons Attribution-NonCommercial 4.0 International License. We gratefully acknowledge APNIC for their contributions. For more information, visit https://creativecommons.org/licenses/by-nc/4.0/. 
+
+[https://github.com/githubapnic/labs/tree/main/volatility](https://github.com/githubapnic/labs/tree/main/volatility)
 
 <b>Prerequisites:</b> Knowledge of Ubuntu, linux commands, Intrusion Detection Systems, packet capture, security and ransomware concepts. 
 
@@ -864,6 +866,7 @@ For more detail refer to:
 
 You have reached the end of this lab. 
 
-This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License. You are free to share and adapt this work for non-commercial purposes, as long as appropriate credit is provided. For more details, visit https://creativecommons.org/licenses/by-nc/4.0/.
 [![CC BY-NC 4.0](https://licensebuttons.net/l/by-nc/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc/4.0/)
+This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License. You are free to share and adapt this work for non-commercial purposes, as long as appropriate credit is provided. For more details, visit https://creativecommons.org/licenses/by-nc/4.0/.
+
 
