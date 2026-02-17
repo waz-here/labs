@@ -10,6 +10,7 @@ This project is shared under the Creative Commons Attribution-NonCommercial 4.0 
 - Containerlab Quickstart: https://containerlab.dev/quickstart/
 - Containerlab Install Guide: https://containerlab.dev/install/
 - Cisco IOL kind documentation: https://containerlab.dev/manual/kinds/iol/
+- Containerlab labs in Codespaces: https://containerlab.dev/manual/codespaces/
 - vrnetlab project: https://github.com/hellt/vrnetlab
 
 ## Focus: Cisco IOL Lab (VM-based via vrnetlab)
@@ -301,6 +302,7 @@ docker image prune
 * https://networkgeekstuff.com/networking/containerlab-hello-world-quick-setup-using-cisco-iol-containers/
 * https://ccie-sp.gitbook.io/ccie-spv5.1-labs
 * https://github.com/srl-labs/containerlab
+* https://github.com/srl-labs/clab-io-draw
 * Networking labs on ARM - https://youtu.be/_BTa-CiTpvI?t=1516
 * Build Arista Lab on Mac or PC with ContainerLab and OrbStack - https://www.youtube.com/watch?v=RyP0Vj3igSM&list=PL-ak-hkgMCXh1DyPU1AWEtLP5KFmNtPVc
 * Install GitHub CLI and Authenticate for Codespaces - https://youtu.be/NO0SW-uKveg
