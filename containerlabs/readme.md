@@ -240,7 +240,7 @@ containerlab destroy -t iol-basic.clab.yml --cleanup
 
 ---
 
-# 🔎 Optional: Useful Commands
+# Optional: Useful Commands
 
 List all labs:
 
