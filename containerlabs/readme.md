@@ -307,3 +307,22 @@ docker image prune
 * Build Arista Lab on Mac or PC with ContainerLab and OrbStack - https://www.youtube.com/watch?v=RyP0Vj3igSM&list=PL-ak-hkgMCXh1DyPU1AWEtLP5KFmNtPVc
 * Install GitHub CLI and Authenticate for Codespaces - https://youtu.be/NO0SW-uKveg
 
+# Cisco Virtual Router Feature Comparison
+
+| Feature                     | **CSR1000v**      | **IOL (L3)**                | **IOL-L2**          | **IOSv**            | **XRv / XRv9000**          | **XRd**                  |
+| --------------------------- | ----------------- | --------------------------- | ------------------- | ------------------- | -------------------------- | ------------------------ |
+| OS Family                   | IOS-XE            | IOS                         | IOS                 | IOS                 | IOS XR                     | IOS XR                   |
+| Architecture                | VM (QEMU/KVM)     | Native Linux binary         | Native Linux binary | VM                  | VM                         | Container (Docker)       |
+| Boot Speed                  | Medium            | Fast                        | Fast                | Medium              | Slow                       | Fast                     |
+| CPU/RAM Usage               | High              | Low                         | Low                 | Medium              | High                       | Medium                   |
+| L3 Routing (OSPF/BGP/IS-IS) | ✅ Full            | ✅ Yes                       | Limited             | ✅ Yes               | ✅ Full SP stack            | ✅ Full SP stack          |
+| MPLS Support                | ✅ Yes             | ⚠ Limited                   | ❌                   | ⚠ Limited           | ✅ Yes                      | ✅ Yes                    |
+| L2 Switching                | ❌                 | ❌                           | ✅                   | IOSvL2 only         | ❌                          | ❌                        |
+| NETCONF                     | ✅ Yes             | ❌                           | ❌                   | ⚠ Limited           | ✅ Yes                      | ✅ Yes                    |
+| RESTCONF                    | ✅ Yes             | ❌                           | ❌                   | ⚠ Limited           | ❌ (XR uses different APIs) | ❌ (XR APIs)              |
+| YANG Models                 | ✅ Yes             | ❌                           | ❌                   | ⚠ Partial           | ✅ Yes                      | ✅ Yes                    |
+| Model-Driven Telemetry      | ✅ Yes             | ❌                           | ❌                   | ❌                   | ✅ Yes                      | ✅ Yes                    |
+| Production Parity           | High (Enterprise) | Low                         | Low                 | Medium              | High (SP)                  | High (SP control-plane)  |
+| Best Use Case               | Enterprise labs   | High-density CCNA/CCNP labs | L2 labs             | VIRL/CML style labs | Service provider labs      | Modern container SP labs |
+
+
