@@ -6,6 +6,12 @@ This project is shared under the Creative Commons Attribution-NonCommercial 4.0 
 
 <b>Prerequisites:</b> Knowledge of Ubuntu, linux commands, Virtualisation, Proxmox (optional), Orbstack (optional) and cisco concepts. 
 
+## Official Documentation
+- Containerlab Quickstart: https://containerlab.dev/quickstart/
+- Containerlab Install Guide: https://containerlab.dev/install/
+- Cisco IOL kind documentation: https://containerlab.dev/manual/kinds/iol/
+- vrnetlab project: https://github.com/hellt/vrnetlab
+
 ## Focus: Cisco IOL Lab (VM-based via vrnetlab)
 
 This guide walks through:
