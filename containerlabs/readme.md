@@ -24,8 +24,6 @@ This guide walks through:
 
 Containerlab follows a **“Lab as Code”** workflow: install → write topology → deploy → inspect → destroy 
 
-[https://containerlab.dev/quickstart/](https://containerlab.dev/quickstart/)
-
 ---
 
 # Prepare Ubuntu 24.04 / Debian VM
@@ -117,9 +115,9 @@ cd vrnetlab
 
 ## Obtain Cisco IOL image
 
-Download your Cisco IOL `.bin` or `.qcow2` image from Cisco (requires entitlement). Refer to [https://marcstech.blog/archives/add-cisco-iol-containerlab-macos/](https://marcstech.blog/archives/add-cisco-iol-containerlab-macos/)
+Download your Cisco IOL `.bin` or `.qcow2` image from Cisco (requires entitlement). Refer to https://marcstech.blog/archives/add-cisco-iol-containerlab-macos/
 
-* Point your web browser to the CML Software Download page. [https://software.cisco.com/download/home/286193282/type/286326381/release/CML-Free](https://software.cisco.com/download/home/286193282/type/286326381/release/CML-Free)
+* Point your web browser to the CML Software Download page. https://software.cisco.com/download/home/286193282/type/286326381/release/CML-Free
 * Click the Download icon for Cisco Modeling Labs reference platform ISO file.
 * Log in with your Cisco.com (CCO ID) credentials when prompted.
 * Save the Zip file (it maybe called refplat-20250616-free-iso.zip) to your Downloads folder and extract the files inside the ISO
@@ -298,10 +296,9 @@ docker image prune
 6. Destroy
 
 # Other resources
-* [https://containerlab.dev/quickstart/](https://containerlab.dev/quickstart/)
-* [https://storage.googleapis.com/site-media-prod/meetings/NANOG93/5366/20250202_Laichi_Containerlab_A_Modern_v1.pdf?utm_source=chatgpt.com](https://storage.googleapis.com/site-media-prod/meetings/NANOG93/5366/20250202_Laichi_Containerlab_A_Modern_v1.pdf?utm_source=chatgpt.com)
-* [https://marcstech.blog/archives/add-cisco-iol-containerlab-macos/](https://marcstech.blog/archives/add-cisco-iol-containerlab-macos/)
-* [https://networkgeekstuff.com/networking/containerlab-hello-world-quick-setup-using-cisco-iol-containers/](https://networkgeekstuff.com/networking/containerlab-hello-world-quick-setup-using-cisco-iol-containers/)
-* [https://ccie-sp.gitbook.io/ccie-spv5.1-labs](https://ccie-sp.gitbook.io/ccie-spv5.1-labs)
-* [https://github.com/srl-labs/containerlab](https://github.com/srl-labs/containerlab)
+* https://storage.googleapis.com/site-media-prod/meetings/NANOG93/5366/20250202_Laichi_Containerlab_A_Modern_v1.pdf
+* https://marcstech.blog/archives/add-cisco-iol-containerlab-macos/
+* https://networkgeekstuff.com/networking/containerlab-hello-world-quick-setup-using-cisco-iol-containers/
+* https://ccie-sp.gitbook.io/ccie-spv5.1-labs
+* https://github.com/srl-labs/containerlab
 
