@@ -52,20 +52,6 @@ The official “all-in-one” installer installs:
 curl -sL https://containerlab.dev/setup | sudo -E bash -s "all"
 ```
 
-## Verify installation
-
-```bash
-docker run --rm hello-world
-containerlab version
-```
-
-Expected:
-
-* Docker prints “Hello from Docker”
-* Containerlab version is displayed
-
----
-
 ## Allow Docker without sudo
 
 ```bash
@@ -78,11 +64,17 @@ Log out and back in (or reboot):
 reboot
 ```
 
-Test again:
+## Verify installation
 
 ```bash
 docker run --rm hello-world
+containerlab version
 ```
+
+Expected:
+
+* Docker prints “Hello from Docker”
+* Containerlab version is displayed
 
 ---
 
