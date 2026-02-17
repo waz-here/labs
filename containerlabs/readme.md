@@ -117,7 +117,7 @@ cd vrnetlab
 
 Download your Cisco IOL `.bin` or `.qcow2` image from Cisco (requires entitlement). Refer to https://marcstech.blog/archives/add-cisco-iol-containerlab-macos/
 
-* Point your web browser to the CML Software Download page. https://software.cisco.com/download/home/286193282/type/286326381/release/CML-Free
+* Open a web browser and go to the CML Software Download page. https://software.cisco.com/download/home/286193282/type/286326381/release/CML-Free
 * Click the Download icon for Cisco Modeling Labs reference platform ISO file.
 * Log in with your Cisco.com (CCO ID) credentials when prompted.
 * Save the Zip file (it maybe called refplat-20250616-free-iso.zip) to your Downloads folder and extract the files inside the ISO
