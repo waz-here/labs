@@ -301,4 +301,6 @@ docker image prune
 * https://networkgeekstuff.com/networking/containerlab-hello-world-quick-setup-using-cisco-iol-containers/
 * https://ccie-sp.gitbook.io/ccie-spv5.1-labs
 * https://github.com/srl-labs/containerlab
+* Networking labs on ARM - https://youtu.be/_BTa-CiTpvI?t=1516
+* Build Arista Lab on Mac or PC with ContainerLab and OrbStack - https://www.youtube.com/watch?v=RyP0Vj3igSM&list=PL-ak-hkgMCXh1DyPU1AWEtLP5KFmNtPVc
 
