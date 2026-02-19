@@ -298,6 +298,7 @@ docker image prune
 * Networking labs on ARM - https://youtu.be/_BTa-CiTpvI?t=1516
 * Build Arista Lab on Mac or PC with ContainerLab and OrbStack - https://www.youtube.com/watch?v=RyP0Vj3igSM&list=PL-ak-hkgMCXh1DyPU1AWEtLP5KFmNtPVc
 * Install GitHub CLI and Authenticate for Codespaces - https://youtu.be/NO0SW-uKveg
+* ProxMox Home lab setup(playlist) - https://www.youtube.com/watch?v=gQpk_ZXnCjQ&list=PLNVfdlaRvkEmgzzaFkZh6zynXLa5IfjPY
 
 # Cisco Virtual Router Feature Comparison
 
