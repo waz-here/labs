@@ -115,6 +115,43 @@ Download your Cisco IOL `.bin` or `.qcow2` image from Cisco (requires entitlemen
 * Log in with your Cisco.com (CCO ID) credentials when prompted.
 * Save the Zip file (it maybe called refplat-20250616-free-iso.zip) to your Downloads folder and extract the files inside the ISO
 
+CML Free includes:
+* IOL (L3)
+* IOL-L2
+* ASAv (optional)
+
+It does not include full platform images like CSR1000v or NX-OS.
+
+## Extract only the required IOL images
+
+Install tools (if needed):
+
+```bash
+sudo apt update
+sudo apt install -y p7zip-full
+```
+
+Extract the ISO from the ZIP:
+
+```bash
+cd ~/Downloads
+7z x refplat-20250616-free-iso.zip
+```
+
+Extract only the IOL images from the ISO:
+
+```bash
+7z x refplat-20250616-free.iso \
+  base-images/iol-xe-17-16-01a/x86_64_crb_linux-adventerprisek9-ms.iol \
+  base-images/ioll2-xe-17-16-01a/x86_64_crb_linux_l2-adventerprisek9-ms.iol
+```
+
+You should now have:
+
+```bash
+base-images/iol-xe-17-16-01a/x86_64_crb_linux-adventerprisek9-ms.iol
+base-images/ioll2-xe-17-16-01a/x86_64_crb_linux_l2-adventerprisek9-ms.iol
+```
 
 Place it in:
 
@@ -122,17 +159,41 @@ Place it in:
 ~/vrnetlab/cisco/iol/
 ```
 
-Example:
+## Prepare image for vrnetlab (IMPORTANT)
+
+vrnetlab requires a specific filename format to extract the version correctly.
+
+### IOL (Layer 3)
 
 ```bash
-cp ~/Downloads/iol-l2-adventerprisek9.bin ~/vrnetlab/cisco/iol/
+cp ~/Downloads/base-images/iol-xe-17-16-01a/x86_64_crb_linux-adventerprisek9-ms.iol \
+   ~/vrnetlab/cisco/iol/cisco_iol-17.16.01a.bin
+```
+
+### IOL L2
+
+```bash
+cp ~/Downloads/base-images/ioll2-xe-17-16-01a/x86_64_crb_linux_l2-adventerprisek9-ms.iol \
+   ~/vrnetlab/cisco/iol/cisco_iol-l2-17.16.01a.bin
 ```
 
 ## Build Docker image
 
+### Build IOL (L3)
 ```bash
 cd ~/vrnetlab/cisco/iol
-make IMAGE=iol-l2-adventerprisek9.bin
+make IMAGE=cisco_iol-17.16.01a.bin
+```
+### Build IOL L2
+
+Clean previous file first:
+```bash
+rm -f cisco_iol-17.16.01a.bin
+```
+Then:
+
+```bash
+make docker-image
 ```
 
 When complete, confirm:
@@ -144,9 +205,28 @@ docker images | grep iol
 You should see something like:
 
 ```
-vrnetlab/cisco_iol   <tag>
+vrnetlab/cisco_iol:17.16.01a   <tag>
+vrnetlab/cisco_iol:L2-17.16.01a   <tag>
+```
+## Important notes
+
+### 1. Filename matters 
+
+This will NOT work:
+
+```bash
+x86_64_crb_linux-adventerprisek9-ms.iol
 ```
 
+This WILL work:
+
+```bash
+cisco_iol-17.16.01a.bin
+```
+
+vrnetlab extracts the version from the filename. If it can’t, the build fails.
+
+---
 
 # Create a Simple Cisco IOL Lab
 
