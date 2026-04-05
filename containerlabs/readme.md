@@ -121,6 +121,7 @@ CML Free includes:
 * ASAv (optional)
 
 It does not include full platform images like CSR1000v or NX-OS.
+For more detail about Cisco Modeling Labs (CML) https://www.cbtnuggets.com/blog/certifications/cisco/how-to-obtain-cisco-virtual-network-device-images-for-labbing
 
 ## Extract only the required IOL images
 
