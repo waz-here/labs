@@ -382,7 +382,7 @@ Examples:
 - missing permissions
 - not enough RAM or disk space
 
-## 14. Useful exit codes to recognise
+## Useful exit codes to recognise
 
 These are not Docker-specific, but they come up a lot.
 
