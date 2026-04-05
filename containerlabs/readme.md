@@ -256,7 +256,7 @@ mgmt:
 topology:
   kinds:
     cisco_iol:
-      image: vrnetlab/cisco_iol:latest
+      image: vrnetlab/cisco_iol:17.16.01a
 
   nodes:
     r1:
@@ -267,7 +267,7 @@ topology:
       mgmt-ipv4: 172.20.20.12
 
   links:
-    - endpoints: ["r1:Ethernet0/0", "r2:Ethernet0/0"]
+    - endpoints: ["r1:Ethernet0/1", "r2:Ethernet0/1"]
 ```
 
 
