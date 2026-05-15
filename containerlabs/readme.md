@@ -9,7 +9,7 @@ This project is shared under the Creative Commons Attribution-NonCommercial 4.0 
 ## Official Documentation
 - Containerlab Quickstart: https://containerlab.dev/quickstart/
 - Containerlab Install Guide: https://containerlab.dev/install/
-- Cisco IOL kind documentation: https://containerlab.dev/manual/kinds/iol/
+- Cisco IOL kind documentation: [https://containerlab.dev/manual/kinds/iol/](https://containerlab.dev/manual/kinds/cisco_iol/)
 - Containerlab labs in Codespaces: https://containerlab.dev/manual/codespaces/
 - vrnetlab project: https://github.com/hellt/vrnetlab
 
